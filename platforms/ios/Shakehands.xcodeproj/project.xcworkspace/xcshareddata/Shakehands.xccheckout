@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B5B31244-C8AB-4D3C-98C0-A28E16456ED9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Shakehands</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>61C25C34-6AD5-41F8-93F8-660AE26FC30E</key>
+		<string>https://github.com/tobiasanger/shakehandsapp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>platforms/ios/Shakehands.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>61C25C34-6AD5-41F8-93F8-660AE26FC30E</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/tobiasanger/shakehandsapp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>61C25C34-6AD5-41F8-93F8-660AE26FC30E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>61C25C34-6AD5-41F8-93F8-660AE26FC30E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>shakehands</string>
+		</dict>
+	</array>
+</dict>
+</plist>

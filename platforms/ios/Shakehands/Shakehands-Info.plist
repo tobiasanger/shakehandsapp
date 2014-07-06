@@ -79,5 +79,24 @@
     </array>
     <key>CFBundleShortVersionString</key>
     <string>0.0.1</string>
+    <key>FacebookAppID</key>
+    <string>735890629767850</string>
+    <key>FacebookDisplayName</key>
+    <string>shakehandstest</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb735890629767850</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb735890629767850</string>
+        </array>
+      </dict>
+    </array>
   </dict>
 </plist>

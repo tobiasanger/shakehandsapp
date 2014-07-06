@@ -43,6 +43,8 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
+		 var model = device.model;
+		 document.getElementById('deviceinfo').innerHTML = model;
 
         console.log('Received Event: ' + id);
     }

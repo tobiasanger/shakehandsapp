@@ -113,3 +113,8 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+.button {
+    margin: 10px 10px 0 0;
+    padding: 7px 0;
+}
