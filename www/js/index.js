@@ -53,15 +53,30 @@ var app = {
 	 	//FB.init({ appId: "735890629767850", nativeInterface: CDV.FB, useCachedDialogs: false });
 		//document.getElementById('data').innerHTML = "FB initialized";
 	},
+
+	FBlogin:function(){
+		if (!window.cordova) {
+                    var appId = '735890629767850'
+                    facebookConnectPlugin.browserInit(appId);
+                }
+                facebookConnectPlugin.login( ["email"], 
+                    function (response) { 
+					//alert(JSON.stringify(response)) 
+					console.log('Welcome!  Fetching your information.... ');
+					},
+                    function (response) { 
+					//alert(JSON.stringify(response)) 
+					console.log('User cancelled login or did not fully authorize.');
+					});
+					  
+ 
+ app.checkLoginState();
+	},
 	
-	statusChangeCallback: function(response) {
-    console.log('statusChangeCallback');
-    console.log(JSON.stringify(response));
-    // The response object is returned with a status field that lets the
-    // app know the current login status of the person.
-    // Full docs on the response object can be found in the documentation
-    // for FB.getLoginStatus().
-    if (response.status === 'connected') {
+	checkLoginState: function() {	
+	facebookConnectPlugin.getLoginStatus( 
+                    function (response) { 
+					if (response.status === 'connected') {
       // Logged into your app and Facebook.
 	  alert("in connected");
 	  app.FBregister();
@@ -77,38 +92,32 @@ var app = {
       // they are logged into this app or not.
       
     }
-  },
-
-	FBlogin:function(){
-		FB.login(function(response) {
-   			if (response.authResponse) {
-     		console.log('Welcome!  Fetching your information.... ');
-     
-   } else {
-     console.log('User cancelled login or did not fully authorize.');
-   }
- }, {scope: 'email'});
- 
- app.checkLoginState();
-	},
-	
-	checkLoginState: function() {	   
-    FB.getLoginStatus(function(response) {
-      app.statusChangeCallback(response);
-    });
+					},
+                    function (response) { 
+					alert(JSON.stringify(response)) 
+					}
+					);
+	 
+    //FB.getLoginStatus(function(response) {
+      //app.statusChangeCallback(response);
+    //});
   },
 	
 	FBregister: function() {
 	   var fbfname = "";
 	   var fblname = "";
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Good to see you, ' + response.name + '.');
+	
+    facebookConnectPlugin.api('/me',["basic_info"], function(response) {
+		
+     console.log('Good to see you, ' + response.name + '.');
 	  console.log(JSON.stringify(response));
+	  //alert(JSON.stringify(response)) 
+	  
 	  app.fbid = response.id;
 	  fbfname = response.first_name;
 	  fblname = response.last_name;
-	   console.log(fbid);  
+	   //alert(app.fbid + " " + fbfname);  
 	 
     
 	  $.ajax({
@@ -141,15 +150,14 @@ var app = {
       error: function(data) {
        alert("There was an error communicating with the database");
       }
-    }); // end ajax call
+    }); // end ajax call*/
 
-	  }); 
-	  
-	  // now need to take the id and sennd it to the data base	  
-		 
-      //document.getElementById('status').innerHTML = 'Good to see you, ' +
-       // response.name;
-    
+	  },
+	  function (response) { 
+					alert(JSON.stringify(response)) 
+					console.log('Error at api call'); 
+					
+	  });
 
 
   },
