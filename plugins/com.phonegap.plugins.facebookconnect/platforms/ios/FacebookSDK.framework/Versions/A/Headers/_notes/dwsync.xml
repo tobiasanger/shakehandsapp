@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="FacebookSDK.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224225689304" remote="130493205150000000" Dst="2" />
+<file name="FBAccessTokenData.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224214888686" remote="130493205150000000" Dst="2" />
+<file name="FBAppCall.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224215228706" remote="130493205150000000" Dst="2" />
+<file name="FBAppEvents.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224215578726" remote="130493205150000000" Dst="2" />
+<file name="FBAppLinkData.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224215938747" remote="130493205150000000" Dst="2" />
+<file name="FBCacheDescriptor.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224216288767" remote="130493205150000000" Dst="2" />
+<file name="FBDialogs.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224216628786" remote="130493205150000000" Dst="2" />
+<file name="FBDialogsData.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224216948804" remote="130493205150000000" Dst="2" />
+<file name="FBDialogsParams.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224217328826" remote="130493205150000000" Dst="2" />
+<file name="FBError.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224217638844" remote="130493205150000000" Dst="2" />
+<file name="FBErrorUtility.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224217938861" remote="130493205150000000" Dst="2" />
+<file name="FBFrictionlessRecipientCache.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224218258879" remote="130493205160000000" Dst="2" />
+<file name="FBFriendPickerViewController.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224218568897" remote="130493205160000000" Dst="2" />
+<file name="FBGraphLocation.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224218848913" remote="130493205160000000" Dst="2" />
+<file name="FBGraphObject.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224219168931" remote="130493205160000000" Dst="2" />
+<file name="FBGraphPlace.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224219458948" remote="130493205160000000" Dst="2" />
+<file name="FBGraphUser.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224219748964" remote="130493205160000000" Dst="2" />
+<file name="FBInsights.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224220038981" remote="130493205160000000" Dst="2" />
+<file name="FBLoginView.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224220318997" remote="130493205160000000" Dst="2" />
+<file name="FBNativeDialogs.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224220599013" remote="130493205160000000" Dst="2" />
+<file name="FBOpenGraphAction.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224220899030" remote="130493205160000000" Dst="2" />
+<file name="FBOpenGraphActionShareDialogParams.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224221189047" remote="130493205160000000" Dst="2" />
+<file name="FBOpenGraphObject.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224221479063" remote="130493205160000000" Dst="2" />
+<file name="FBPlacePickerViewController.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224221769080" remote="130493205160000000" Dst="2" />
+<file name="FBProfilePictureView.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224222039095" remote="130493205160000000" Dst="2" />
+<file name="FBRequest.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224222309111" remote="130493205160000000" Dst="2" />
+<file name="FBRequestConnection.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224222629129" remote="130493205160000000" Dst="2" />
+<file name="FBSession.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224222899145" remote="130493205160000000" Dst="2" />
+<file name="FBSessionTokenCachingStrategy.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224223179161" remote="130493205160000000" Dst="2" />
+<file name="FBSettings.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224223539181" remote="130493205160000000" Dst="2" />
+<file name="FBShareDialogParams.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224223799196" remote="130493205160000000" Dst="2" />
+<file name="FBShareDialogPhotoParams.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224224089213" remote="130493205160000000" Dst="2" />
+<file name="FBTestSession.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224224389230" remote="130493205160000000" Dst="2" />
+<file name="FBUserSettingsViewController.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224224669246" remote="130493205160000000" Dst="2" />
+<file name="FBViewController.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224224979264" remote="130493205160000000" Dst="2" />
+<file name="FBWebDialogs.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224225339284" remote="130493205160000000" Dst="2" />
+<file name="NSError+FBError.h" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224225969320" remote="130493205160000000" Dst="2" />
+</dwsync>

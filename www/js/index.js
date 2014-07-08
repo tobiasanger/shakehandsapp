@@ -21,25 +21,30 @@ var app = {
 	   
     },
 		
-    bindEvents: function() {		
+    bindEvents: function() {
+		
+		
+		var touch = 'touchstart';
+		if (!window.cordova) touch ='click'
  
         document.addEventListener('deviceready', this.onDeviceReady, false);
 		
-		FBButton.addEventListener('touchstart', this.FBlogin, false); //for use on phone
+		FBButton.addEventListener(touch, this.FBlogin, false); //for use on phone
 		
 		//loginButton.addEventListener('click', this.jslogin, false); // for use on web browser
-		loginButton.addEventListener('touchstart', this.jslogin, false); //for use on phone
+		loginButton.addEventListener(touch, this.jslogin, false); //for use on phone
 		
 		//registerButton.addEventListener('click', this.jsregister, false); // for use on web browser
-		registerButton.addEventListener('touchstart', this.jsregister, false); // for use on phone
+		registerButton.addEventListener(touch, this.jsregister, false); // for use on phone
 		
 		//refreshRequestButton.addEventListener('click', this.jsrequest, false);
-		refreshRequestButton.addEventListener('touchstart', this.jsrequest, false);
+		refreshRequestButton.addEventListener(touch, this.jsrequest, false);
 		
-		TestButton.addEventListener('touchstart', this.testmeet, false);
+		TestButton.addEventListener(touch, this.testmeet, false);
 		
-		refreshButton.addEventListener('touchstart', ble.refreshDeviceList, false); // for use on phone
-	    deviceList.addEventListener('touchstart', ble.connect, false); //for use on phone assume not scrolling
+		refreshButton.addEventListener(touch, ble.refreshDeviceList, false); // for use on phone
+	    deviceList.addEventListener(touch, ble.connect, false); //for use on phone assume not scrolling
+		
 		$(document).on("pagebeforeshow","#connect", ble.refreshDeviceList); // for use on phone
 		$(document).on("pagebeforeshow","#allrequests", this.jsrequest); 
 		$(document).on("pagebeforeshow","#profile", this.jsprofile); 
@@ -121,7 +126,7 @@ var app = {
 	 
     
 	  $.ajax({
-      url: 'http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/shakehands web/www/php/fbregister.php',
+      url: 'http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/php/fbregister.php',
       type: 'post',
       data: {FBID:app.fbid,
  			 FBFNAME:fbfname,
@@ -164,7 +169,7 @@ var app = {
 	
 	jslogin: function() {
     $.ajax({
-      url: 'http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/shubha/php/login.php',
+      url: 'http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/php/login.php',
       type: 'post',
       data: $('#form-login').serialize(),
       success: function(data) {
@@ -188,7 +193,7 @@ var app = {
  
  jsregister: function() {
     $.ajax({
-      url: 'http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/shakehands web/www/php/input.php',
+      url: 'http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/php/input.php',
       type: 'post',
       data: $('#form-register').serialize(),
       success: function(d) {
@@ -219,7 +224,7 @@ var temp_allrequests = "{{#requests}}<tr><td><a href=\"#\" onclick=\"app.viewreq
 
 $.ajax({
 		type: "POST",
-		url: "http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/shubha/php/request.php",		
+		url: "http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/php/request.php",		
 		data: {user:app.global_user}, //TODO need to unify later to one user variable
 		dataType: "json",
 		success: function(data){
@@ -244,7 +249,7 @@ jsprofile: function() {
 var temp_profile="<p><img src=\"{{PHOTO}}\" width=25% style=\"float:left\" alt=\"Profile Photo\"/></p><h1 id=\"my_fullname\">{{FNAME}} {{LNAME}} </h1><p id=\"my_bio\">User bio goes here.</p><br><br/><p id=\"my_email\"><a href=\"#\">{{EMAIL}}</a></p><p id=\"my_phone\">{{PHONE}} </p><div data-role=\"controlgroup\" data-type=\"horizontal\"><button id=\"my_facebook\">Facebook</button><button id=\"my_linkedin\">LinkedIn</button><button id=\"my_twitter\">Twitter</button><button id=\"my_instagram\">Instagram</button></div>";	
 		
  $.ajax({
-      url: 'http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/shubha/php/profile.php',
+      url: 'http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/php/profile.php',
       type: 'post',
       data:  {user:app.global_user},
 	  dataType:"json",
@@ -285,7 +290,7 @@ var temp_user="<img src=\"{{PHOTO}}\" width=25% style=\"float:left\" alt=\"Profi
 
 $.ajax({
 		type: "POST",
-		url: 'http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/shubha/php/profile.php',		
+		url: 'http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/php/profile.php',		
 		data: data_string,
 		dataType:"json",
 		success: function(data){
@@ -316,7 +321,7 @@ $.ajax({
 
 	$.ajax({
 		type: "POST",
-		url: 'http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/shubha/php/ignore.php',		
+		url: 'http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/php/ignore.php',		
 		data: data_string,
 		dataType:"json",
 		success: function(data){
@@ -348,7 +353,7 @@ var data_string = "MYID2="+OTHERS+"&MYID1="+MY+"&TIME="+time;
     console.log(data_string)
 	$.ajax({
 		type: "POST",
-		url: 'http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/shubha/php/Confirm.php',		
+		url: 'http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/php/Confirm.php',		
 		data: data_string,
 		dataType:"json",
 		success: function(data){
@@ -385,7 +390,7 @@ var data_string = "MYID2="+OTHERS+"&MYID1="+MY+"&TIME="+time;
 	 var d = new Date();
     	var n = 1;
 		n = d.getTime();
-		$.post("http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/shakehands web/www/php/meet.php",
+		$.post("http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/php/meet.php",
   			{
     		MYID:app.global_user,
     		METID:id,

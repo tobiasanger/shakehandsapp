@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="copy-www-build-step.sh" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224258151161" remote="130493205070000000" Dst="2" />
+<file name="install-device" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224258451178" remote="130493205070000000" Dst="2" />
+<file name="install-emulator" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224258841200" remote="130493205070000000" Dst="2" />
+<file name="list-devices" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224259151218" remote="130493205080000000" Dst="2" />
+<file name="list-emulator-images" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224259491238" remote="130493205080000000" Dst="2" />
+<file name="list-started-emulators" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224259891260" remote="130493205080000000" Dst="2" />
+<file name="sim.applescript" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224260241281" remote="130493205080000000" Dst="2" />
+<file name="start-emulator" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224260601301" remote="130493205080000000" Dst="2" />
+</dwsync>

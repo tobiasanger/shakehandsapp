@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="android_sdk_version.js" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224142544549" remote="130493204680000000" Dst="2" />
+<file name="appinfo.js" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224143234588" remote="130493204680000000" Dst="2" />
+<file name="build.js" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224143694614" remote="130493204680000000" Dst="2" />
+<file name="check_reqs.js" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224144284648" remote="130493204680000000" Dst="2" />
+<file name="clean.js" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224144764676" remote="130493204680000000" Dst="2" />
+<file name="device.js" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224145474716" remote="130493204680000000" Dst="2" />
+<file name="emulator.js" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224146024748" remote="130493204680000000" Dst="2" />
+<file name="exec.js" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224146404769" remote="130493204680000000" Dst="2" />
+<file name="install-device" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224146744789" remote="130493204680000000" Dst="2" />
+<file name="install-device.bat" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224147044806" remote="130493204680000000" Dst="2" />
+<file name="install-emulator" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224147354824" remote="130493204680000000" Dst="2" />
+<file name="install-emulator.bat" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224147664842" remote="130493204680000000" Dst="2" />
+<file name="list-devices" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224148034863" remote="130493204680000000" Dst="2" />
+<file name="list-devices.bat" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224148384883" remote="130493204680000000" Dst="2" />
+<file name="list-emulator-images" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224148714902" remote="130493204680000000" Dst="2" />
+<file name="list-emulator-images.bat" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224148984917" remote="130493204680000000" Dst="2" />
+<file name="list-started-emulators" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224149264933" remote="130493204680000000" Dst="2" />
+<file name="list-started-emulators.bat" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224149544949" remote="130493204680000000" Dst="2" />
+<file name="log.js" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224149824965" remote="130493204680000000" Dst="2" />
+<file name="run.js" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224150144983" remote="130493204680000000" Dst="2" />
+<file name="start-emulator" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224150455001" remote="130493204690000000" Dst="2" />
+<file name="start-emulator.bat" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224150775019" remote="130493204690000000" Dst="2" />
+</dwsync>

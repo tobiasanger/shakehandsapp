@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="AccessToken.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224096541917" remote="130493204980000000" Dst="2" />
+<file name="AccessTokenSource.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224096901938" remote="130493204980000000" Dst="2" />
+<file name="AppEventsConstants.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224097391966" remote="130493204980000000" Dst="2" />
+<file name="AppEventsLogger.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224097811990" remote="130493204980000000" Dst="2" />
+<file name="AppLinkData.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224098202012" remote="130493204980000000" Dst="2" />
+<file name="AuthorizationClient.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224098532031" remote="130493204980000000" Dst="2" />
+<file name="FacebookAuthorizationException.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224098922054" remote="130493204980000000" Dst="2" />
+<file name="FacebookBroadcastReceiver.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224099302075" remote="130493204980000000" Dst="2" />
+<file name="FacebookDialogException.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224099732100" remote="130493204990000000" Dst="2" />
+<file name="FacebookException.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224100122122" remote="130493204990000000" Dst="2" />
+<file name="FacebookGraphObjectException.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224100482143" remote="130493204990000000" Dst="2" />
+<file name="FacebookOperationCanceledException.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224100902167" remote="130493204990000000" Dst="2" />
+<file name="FacebookRequestError.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224101252187" remote="130493204990000000" Dst="2" />
+<file name="FacebookSdkVersion.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224101622208" remote="130493204990000000" Dst="2" />
+<file name="FacebookServiceException.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224102012230" remote="130493204990000000" Dst="2" />
+<file name="GetTokenClient.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224102412253" remote="130493204990000000" Dst="2" />
+<file name="HttpMethod.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224102792275" remote="130493204990000000" Dst="2" />
+<file name="InsightsLogger.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224103162296" remote="130493204990000000" Dst="2" />
+<file name="LegacyHelper.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224103552318" remote="130493205010000000" Dst="2" />
+<file name="LoggingBehavior.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224103872337" remote="130493205010000000" Dst="2" />
+<file name="LoginActivity.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224104182354" remote="130493205010000000" Dst="2" />
+<file name="NativeAppCallAttachmentStore.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224104662382" remote="130493205020000000" Dst="2" />
+<file name="NativeAppCallContentProvider.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224104982400" remote="130493205020000000" Dst="2" />
+<file name="NonCachingTokenCachingStrategy.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224105422425" remote="130493205020000000" Dst="2" />
+<file name="ProgressNoopOutputStream.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224105842449" remote="130493205020000000" Dst="2" />
+<file name="ProgressOutputStream.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224106232472" remote="130493205020000000" Dst="2" />
+<file name="Request.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224106662496" remote="130493205020000000" Dst="2" />
+<file name="RequestAsyncTask.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224107152524" remote="130493205020000000" Dst="2" />
+<file name="RequestBatch.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224107592550" remote="130493205020000000" Dst="2" />
+<file name="RequestOutputStream.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224108102579" remote="130493205020000000" Dst="2" />
+<file name="RequestProgress.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224108542604" remote="130493205020000000" Dst="2" />
+<file name="Response.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224108992630" remote="130493205020000000" Dst="2" />
+<file name="Session.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224109382652" remote="130493205030000000" Dst="2" />
+<file name="SessionDefaultAudience.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224109772674" remote="130493205030000000" Dst="2" />
+<file name="SessionLoginBehavior.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224110142695" remote="130493205030000000" Dst="2" />
+<file name="SessionState.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224110532718" remote="130493205030000000" Dst="2" />
+<file name="Settings.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224110932741" remote="130493205030000000" Dst="2" />
+<file name="SharedPreferencesTokenCachingStrategy.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224111342764" remote="130493205030000000" Dst="2" />
+<file name="TestSession.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224111762788" remote="130493205030000000" Dst="2" />
+<file name="TokenCachingStrategy.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224112142810" remote="130493205030000000" Dst="2" />
+<file name="UiLifecycleHelper.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224112532832" remote="130493205030000000" Dst="2" />
+</dwsync>

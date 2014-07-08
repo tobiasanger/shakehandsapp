@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="App.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224052899421" remote="130493204750000000" Dst="2" />
+<file name="AuthenticationToken.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224053259442" remote="130493204750000000" Dst="2" />
+<file name="CallbackContext.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224053589461" remote="130493204750000000" Dst="2" />
+<file name="Config.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224054019485" remote="130493204750000000" Dst="2" />
+<file name="CordovaActivity.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224054349504" remote="130493204750000000" Dst="2" />
+<file name="CordovaArgs.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224054679523" remote="130493204750000000" Dst="2" />
+<file name="CordovaChromeClient.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224054979540" remote="130493204760000000" Dst="2" />
+<file name="CordovaInterface.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224055289558" remote="130493204760000000" Dst="2" />
+<file name="CordovaPlugin.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224055659579" remote="130493204760000000" Dst="2" />
+<file name="CordovaResourceApi.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224055959596" remote="130493204760000000" Dst="2" />
+<file name="CordovaWebView.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224056279615" remote="130493204760000000" Dst="2" />
+<file name="CordovaWebViewClient.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224056629635" remote="130493204760000000" Dst="2" />
+<file name="DirectoryManager.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224056959653" remote="130493204760000000" Dst="2" />
+<file name="DroidGap.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224057289672" remote="130493204760000000" Dst="2" />
+<file name="ExifHelper.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224057579689" remote="130493204760000000" Dst="2" />
+<file name="ExposedJsApi.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224057889707" remote="130493204760000000" Dst="2" />
+<file name="FileHelper.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224058239727" remote="130493204760000000" Dst="2" />
+<file name="IceCreamCordovaWebViewClient.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224058579746" remote="130493204760000000" Dst="2" />
+<file name="JSONUtils.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224058919766" remote="130493204760000000" Dst="2" />
+<file name="LinearLayoutSoftKeyboardDetect.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224059699810" remote="130493204760000000" Dst="2" />
+<file name="LOG.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224059299787" remote="130493204760000000" Dst="2" />
+<file name="NativeToJsMessageQueue.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224060099833" remote="130493204760000000" Dst="2" />
+<file name="PluginEntry.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224060469854" remote="130493204760000000" Dst="2" />
+<file name="PluginManager.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224060889878" remote="130493204760000000" Dst="2" />
+<file name="PluginResult.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224061239898" remote="130493204760000000" Dst="2" />
+<file name="ScrollEvent.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224061579918" remote="130493204760000000" Dst="2" />
+<file name="Whitelist.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224061969940" remote="130493204760000000" Dst="2" />
+</dwsync>

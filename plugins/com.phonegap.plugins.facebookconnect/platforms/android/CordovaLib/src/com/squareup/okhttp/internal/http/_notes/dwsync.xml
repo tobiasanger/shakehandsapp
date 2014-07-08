@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="AbstractHttpInputStream.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224043068859" remote="130493204730000000" Dst="2" />
+<file name="AbstractHttpOutputStream.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224043388877" remote="130493204730000000" Dst="2" />
+<file name="HeaderParser.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224043718896" remote="130493204730000000" Dst="2" />
+<file name="HttpAuthenticator.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224044018913" remote="130493204730000000" Dst="2" />
+<file name="HttpDate.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224044318930" remote="130493204730000000" Dst="2" />
+<file name="HttpEngine.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224044618948" remote="130493204730000000" Dst="2" />
+<file name="HttpResponseCache.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224044908964" remote="130493204730000000" Dst="2" />
+<file name="HttpsURLConnectionImpl.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224045989026" remote="130493204730000000" Dst="2" />
+<file name="HttpTransport.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224045228983" remote="130493204730000000" Dst="2" />
+<file name="HttpURLConnectionImpl.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224045689009" remote="130493204730000000" Dst="2" />
+<file name="OkResponseCache.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224046289043" remote="130493204730000000" Dst="2" />
+<file name="OkResponseCacheAdapter.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224046579060" remote="130493204740000000" Dst="2" />
+<file name="RawHeaders.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224046859076" remote="130493204740000000" Dst="2" />
+<file name="RequestHeaders.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224047159093" remote="130493204740000000" Dst="2" />
+<file name="ResponseHeaders.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224047449109" remote="130493204740000000" Dst="2" />
+<file name="RetryableOutputStream.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224047749127" remote="130493204740000000" Dst="2" />
+<file name="RouteSelector.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224048069145" remote="130493204740000000" Dst="2" />
+<file name="SpdyTransport.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224048359162" remote="130493204740000000" Dst="2" />
+<file name="Transport.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224048649178" remote="130493204740000000" Dst="2" />
+<file name="UnknownLengthHttpInputStream.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224049009199" remote="130493204740000000" Dst="2" />
+</dwsync>

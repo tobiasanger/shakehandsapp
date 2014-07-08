@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="AnalyticsEvents.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224116013031" remote="130493204990000000" Dst="2" />
+<file name="AttributionIdentifiers.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224116373052" remote="130493204990000000" Dst="2" />
+<file name="CacheableRequestBatch.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224116753073" remote="130493204990000000" Dst="2" />
+<file name="FileLruCache.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224117233101" remote="130493204990000000" Dst="2" />
+<file name="ImageDownloader.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224117623123" remote="130493204990000000" Dst="2" />
+<file name="ImageRequest.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224118003145" remote="130493204990000000" Dst="2" />
+<file name="ImageResponse.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224118363166" remote="130493204990000000" Dst="2" />
+<file name="ImageResponseCache.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224118743187" remote="130493205000000000" Dst="2" />
+<file name="Logger.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224119023203" remote="130493205000000000" Dst="2" />
+<file name="NativeProtocol.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224119423226" remote="130493205000000000" Dst="2" />
+<file name="package-info.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224122363394" remote="130493205000000000" Dst="2" />
+<file name="PlatformServiceClient.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224119733244" remote="130493205000000000" Dst="2" />
+<file name="ServerProtocol.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224120033261" remote="130493205000000000" Dst="2" />
+<file name="SessionAuthorizationType.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224120363280" remote="130493205000000000" Dst="2" />
+<file name="SessionTracker.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224120683298" remote="130493205000000000" Dst="2" />
+<file name="UrlRedirectCache.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224121003317" remote="130493205000000000" Dst="2" />
+<file name="Utility.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224121353337" remote="130493205000000000" Dst="2" />
+<file name="Validate.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224121693356" remote="130493205000000000" Dst="2" />
+<file name="WorkQueue.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130492224122013374" remote="130493205000000000" Dst="2" />
+</dwsync>
