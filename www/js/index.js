@@ -55,10 +55,10 @@ var app = {
 	},
 
 	FBlogin:function(){
-		if (!window.cordova) {
+		/*if (!window.cordova) {
                     var appId = '735890629767850'
                     facebookConnectPlugin.browserInit(appId);
-                }
+                }*/
                 facebookConnectPlugin.login( ["email"], 
                     function (response) { 
 					//alert(JSON.stringify(response)) 

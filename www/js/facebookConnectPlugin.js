@@ -15,8 +15,11 @@ if (!window.cordova) {
             // Try will catch errors when SDK has not been init
             try {
                 FB.getLoginStatus(function (response) {
-                    s(response.status);
+                    alert(JSON.stringify(response)); 
+					s(response);
+					
                 });
+				
             } catch (error) {
                 if (!f) {
                     console.error(error.message);
@@ -151,12 +154,50 @@ if (!window.cordova) {
     };
     
     // Bake in the JS SDK
-    (function () {
+   /* (function () {
         console.log("launching FB SDK")
         var e = document.createElement('script');
         e.src = document.location.protocol + '//connect.facebook.net/en_US/sdk.js';
         e.async = true;
         document.getElementById('fb-root').appendChild(e);
-    }());
+    }());*/
+	
+	if (!window.cordova) {
+	 window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '735890629767850',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.0' // use version 2.0
+  });
+
+  // Now that we've initialized the JavaScript SDK, we call 
+  // FB.getLoginStatus().  This function gets the state of the
+  // person visiting this page and can return one of three states to
+  // the callback you provide.  They can be:
+  //
+  // 1. Logged into your app ('connected')
+  // 2. Logged into Facebook, but not your app ('not_authorized')
+  // 3. Not logged into Facebook and can't tell if they are logged into
+  //    your app or not.
+  //
+  // These three cases are handled in the callback function.
+
+  /*FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });*/
+
+  };
+
+	}
+	
+	(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
 
 }
