@@ -5,7 +5,7 @@
   /* connect to the db */
   $link = mysql_connect("websys3.stern.nyu.edu","websysS143","websysS143!!") or die('Cannot connect to the DB');
   mysql_select_db('websysS143',$link) or die('Cannot select the DB');
-  $USERID = $_POST['user'];
+  $PHONENUMBER = $_POST['user'];
   $format =  'json';
   
   
@@ -13,12 +13,12 @@
   /* grab the posts from the db */
   $query1 = "(SELECT MYID1 AS MY, MYID2 AS OTHERS,FNAME AS NAME, EMAIL,time
            FROM REQUESTS, SHAKEHANDS
-           WHERE MYID1 = '$USERID' AND MYID1_STATUS = 0 AND ID = MYID2
+           WHERE MYID1 = '$PHONENUMBER' AND MYID1_STATUS = 0 AND PHONENUMBER = MYID2
            ORDER BY time)
                UNION 
            (SELECT MYID2 AS MY, MYID1 AS OTHERS ,FNAME AS NAME, EMAIL, time 
            FROM REQUESTS,SHAKEHANDS
-           WHERE MYID2 = '$USERID' AND MYID2_STATUS = 0 AND ID = MYID1
+           WHERE MYID2 = '$PHONENUMBER' AND MYID2_STATUS = 0 AND PHONENUMBER = MYID1
            ORDER BY time); "; 
            
            
