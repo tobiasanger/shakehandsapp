@@ -32,6 +32,9 @@
     <access origin="https://api.facebook.com" />
     <access origin="https://*.fbcdn.net" />
     <access origin="https://*.akamaihd.net" />
+    <feature name="LocationManager">
+        <param name="ios-package" value="CDVLocationManager" />
+    </feature>
     <feature name="RFduino">
         <param name="ios-package" onload="true" value="MEGRFduino" />
     </feature>

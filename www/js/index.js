@@ -13,6 +13,8 @@ var app = {
 	global_user:"",
 	fbid:"",
 	user:"user=",
+	major:"",
+	minor:"",
 	
 //************************************************		
 		
@@ -51,6 +53,78 @@ var app = {
 		},
 	
 	onDeviceReady: function() {
+		
+	
+
+       
+	
+
+		
+		
+		
+		
+		
+		
+		
+
+        var delegate = new cordova.plugins.locationManager.Delegate().implement({
+
+            didDetermineStateForRegion: function (pluginResult) {
+
+                logToDom('[DOM] didDetermineStateForRegion: ' + JSON.stringify(pluginResult));
+				
+				if (pluginResult.state =="CLRegionStateInside"){
+				//alert("inside");
+				cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
+            .fail(console.error)
+            .done();
+				}
+                cordova.plugins.locationManager.appendToDeviceLog('[DOM] didDetermineStateForRegion: '
+                    + JSON.stringify(pluginResult));
+            },
+
+            didStartMonitoringForRegion: function (pluginResult) {
+				//alert(JSON.stringify(pluginResult));
+                console.log('didStartMonitoringForRegion:', pluginResult);
+
+                logToDom('didStartMonitoringForRegion:' + JSON.stringify(pluginResult));
+            },
+
+            didRangeBeaconsInRegion: function (pluginResult) {
+				
+                logToDom('[DOM] didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
+				//alert(pluginResult.beacons[0].rssi);
+				if(pluginResult.beacons[0].rssi > -65)
+				{
+				/*cordova.plugins.locationManager.stopRangingBeaconsInRegion(beaconRegion)
+            .fail(console.error)
+            .done();*/
+			//alert(pluginResult.beacons[0].major)
+				//idea: start timer or count here, if rssi >-47 for more than 30 sec or so then report meeting to database
+				 // start of from here, not sure if stops after first time
+				
+				}
+				
+            }
+
+        });
+
+        var uuid = 'E2C56DB5-DFFB-48D2-B060-D0F5A71096E0';
+        var identifier = 'rfduino';
+        var minor = 0;
+        var major = 0;
+        var beaconRegion = new cordova.plugins.locationManager.BeaconRegion(identifier, uuid);
+
+        cordova.plugins.locationManager.setDelegate(delegate);
+		 
+        cordova.plugins.locationManager.startMonitoringForRegion(beaconRegion)
+            .fail(console.error)
+            .done();
+        /*cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
+            .fail(console.error)
+            .done();*/
+
+		
 		//app.initFacebook()
     },
 	
@@ -138,7 +212,9 @@ var app = {
 			app.global_user = data.ID;	
 			app.user += data.ID;
 			alert(app.global_user);				
-			console.log(app.global_user);			
+			console.log(app.global_user);	
+			
+					
 			$.mobile.changePage("#activity", {transition: "slidefade"});
         }
 		else if (data.status== "1") {
@@ -215,6 +291,9 @@ var app = {
       }
     }); // end ajax call
  },
+ 
+ 
+ 
  
  jsrequest: function () {
    //alert ("inside jsrequests");
@@ -526,7 +605,7 @@ var ble = {
 	
 	onDisconnect: function(reason) {
 		//alert("in on disconnect " + reason);
-		ble.reconnect();
+		//ble.reconnect();
 		
 	},
 	
@@ -561,12 +640,20 @@ if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('C
 							   
 
  
- 
+ var logToDom = function (message) {
+	
+            var e = document.createElement('label');
+            e.innerText = message;
 
-  
-
+            var br = document.createElement('br');
+            var br2 = document.createElement('br');
+			document.getElementById("ibeaconlog").appendChild(e);
+            document.getElementById("ibeaconlog").appendChild(br);
+            document.getElementById("ibeaconlog").appendChild(br2);
+        };
   
 	
+
 	
 
 

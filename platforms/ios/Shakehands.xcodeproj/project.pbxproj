@@ -49,6 +49,9 @@
 		452F6BB983D34DBF9CA865DA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF541D5470554F4497E23528 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		99F988D75E9347708B4DB041 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659C829D34194AC0B3253A92 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E5CC209F7A884746876BE0D2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F825956B1F414BD5A20ECE60 /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		3E68CA84629C48BD82EC2B52 /* CDVLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DED5DAF9582546388A9EDD69 /* CDVLocationManager.m */; };
+		9FFE6107D98B4C69B062982F /* AppDelegate+CDVLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BFECCA6D0A4A7F98C68B7F /* AppDelegate+CDVLocationManager.m */; };
+		A54F6C8EA9B54A3FA8AE87B4 /* LMLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F287C1A2BBA446A8C940437 /* LMLogger.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +131,12 @@
 		EF541D5470554F4497E23528 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Accounts.framework"; path = "System/Library/Frameworks/Accounts.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 		659C829D34194AC0B3253A92 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AdSupport.framework"; path = "System/Library/Frameworks/AdSupport.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 		F825956B1F414BD5A20ECE60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Security.framework"; path = "System/Library/Frameworks/Security.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		DED5DAF9582546388A9EDD69 /* CDVLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVLocationManager.m"; path = "org.apache.cordova.ibeacon/CDVLocationManager.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		82BFECCA6D0A4A7F98C68B7F /* AppDelegate+CDVLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AppDelegate+CDVLocationManager.m"; path = "org.apache.cordova.ibeacon/AppDelegate+CDVLocationManager.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		8F287C1A2BBA446A8C940437 /* LMLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "LMLogger.m"; path = "org.apache.cordova.ibeacon/LMLogger.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		8A4D170B5FE6492C9890EBFC /* CDVLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVLocationManager.h"; path = "org.apache.cordova.ibeacon/CDVLocationManager.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		11CD30ADAFD542BB89FA94AC /* AppDelegate+CDVLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AppDelegate+CDVLocationManager.h"; path = "org.apache.cordova.ibeacon/AppDelegate+CDVLocationManager.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		322C6132EB924A48BBD1B856 /* LMLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LMLogger.h"; path = "org.apache.cordova.ibeacon/LMLogger.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +279,12 @@
 				D82C779078054D66A9AE7C64 /* CBPeripheral+Extensions.h */,
 				D3EEC0660CBF451C9D05D8DA /* FacebookConnectPlugin.m */,
 				40184ACA64D14DEC8BA9E5D4 /* FacebookConnectPlugin.h */,
+				DED5DAF9582546388A9EDD69 /* CDVLocationManager.m */,
+				82BFECCA6D0A4A7F98C68B7F /* AppDelegate+CDVLocationManager.m */,
+				8F287C1A2BBA446A8C940437 /* LMLogger.m */,
+				8A4D170B5FE6492C9890EBFC /* CDVLocationManager.h */,
+				11CD30ADAFD542BB89FA94AC /* AppDelegate+CDVLocationManager.h */,
+				322C6132EB924A48BBD1B856 /* LMLogger.h */,
 			);
 			name = Plugins;
 			path = "Shakehands/Plugins";
@@ -468,6 +483,9 @@
 				C15D58DA9AAE4AE1A2F3F789 /* MEGRFduino.m in Sources */,
 				91E83565C1DD42998F00C8DD /* CBPeripheral+Extensions.m in Sources */,
 				2E35F5B5DA9C472490A35667 /* FacebookConnectPlugin.m in Sources */,
+				3E68CA84629C48BD82EC2B52 /* CDVLocationManager.m in Sources */,
+				9FFE6107D98B4C69B062982F /* AppDelegate+CDVLocationManager.m in Sources */,
+				A54F6C8EA9B54A3FA8AE87B4 /* LMLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
