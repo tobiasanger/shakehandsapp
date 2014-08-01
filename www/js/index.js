@@ -13,8 +13,9 @@ var app = {
 	global_user:"",
 	fbid:"",
 	user:"user=",
-	major:"",
-	minor:"",
+	rangedme:0,
+	major:0,
+	minor:0,
 	
 //************************************************		
 		
@@ -54,17 +55,6 @@ var app = {
 	
 	onDeviceReady: function() {
 		
-	
-
-       
-	
-
-		
-		
-		
-		
-		
-		
 		
 
         var delegate = new cordova.plugins.locationManager.Delegate().implement({
@@ -94,6 +84,16 @@ var app = {
 				
                 logToDom('[DOM] didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
 				//alert(pluginResult.beacons[0].rssi);
+				console.log("########in ranging")
+				if (pluginResult.beacons[0].minor == app.minor)
+				{
+					console.log("######## got minor")
+					if (app.rangedme == 0){
+						console.log("activate reconnect");
+					setTimeout(function(){ble.reconnect()},6000); // this stuff is not working
+					app.rangedme = 1;
+					}
+				}
 				if(pluginResult.beacons[0].rssi > -65)
 				{
 				/*cordova.plugins.locationManager.stopRangingBeaconsInRegion(beaconRegion)
@@ -157,7 +157,7 @@ var app = {
                     function (response) { 
 					if (response.status === 'connected') {
       // Logged into your app and Facebook.
-	  alert("in connected");
+	  //alert("in connected");
 	  app.FBregister();
       //inputFB();
     } else if (response.status === 'not_authorized') {
@@ -209,13 +209,17 @@ var app = {
 		console.log(data);
         if(data.status== "0") {
 			
-			app.global_user = data.ID;	
+			app.global_user = data.ID;
+			app.major = parseInt(app.global_user.substr(0,4));
+			app.minor = parseInt(app.global_user.substr(4,4));	
 			app.user += data.ID;
-			alert(app.global_user);				
+			//alert(app.global_user);				
 			console.log(app.global_user);	
+			console.log(app.major);	
+			console.log(app.minor);	
 			
 					
-			$.mobile.changePage("#activity", {transition: "slidefade"});
+			$.mobile.changePage("#connect", {transition: "slidefade"});
         }
 		else if (data.status== "1") {
 			
@@ -525,6 +529,7 @@ var ble = {
 				//alert("Now reconnected to");
 			//};
 		rfduino.connect(uuid, ble.writePayload, ble.onDisconnect);
+		
 		//alert("in on resconnect and called connect " +uuid);
 	},
 	
@@ -534,12 +539,17 @@ var ble = {
         //var indata = arrayBufferToFloat(data);
 		//var indata = arrayBufferToInt(data);
      	var indata = new Int8Array(data);
-		var justmet = "";
+		var indataST = "";
 		for (var i=0;i<indata.length;i++)
 		{			 
-		justmet += String.fromCharCode(indata[i]);
+		 indataST+= String.fromCharCode(indata[i]);
 		}
-		app.jsmeet(justmet);
+		if (indataST == 'S') {
+			
+			//alert ("received data");
+			//setTimeout(function(){ble.reconnect()},11000);
+		}
+		//app.jsmeet(justmet);
 		//alert(justmet);
 		/*var d = new Date();
     	var n = 1;
@@ -564,10 +574,11 @@ var ble = {
     },
 	
 	writePayload: function(){
+		app.rangedme = 0;
 		//shakehand.innerHTML = "yeah";
 		//alert("in write payload");
 		//rfduino.isConnected(alert("we are connected"),ble.onError);
-		setTimeout(function(){rfduino.write('A',ble.writePlSuccess,ble.onError)},2000);
+		//setTimeout(function(){rfduino.write('A',ble.writePlSuccess,ble.onError)},2000);
 		//alert("after rfduino class call");
 	},
 	

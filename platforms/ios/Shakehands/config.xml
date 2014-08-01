@@ -35,6 +35,9 @@
     <feature name="LocationManager">
         <param name="ios-package" value="CDVLocationManager" />
     </feature>
+    <feature name="Console">
+        <param name="ios-package" value="CDVLogger" />
+    </feature>
     <feature name="RFduino">
         <param name="ios-package" onload="true" value="MEGRFduino" />
     </feature>

@@ -66,6 +66,20 @@ module.exports = [
         "file": "plugins/org.apache.cordova.ibeacon/www/model/BeaconRegion.js",
         "id": "org.apache.cordova.ibeacon.BeaconRegion",
         "runs": true
+    },
+    {
+        "file": "plugins/org.apache.cordova.console/www/console-via-logger.js",
+        "id": "org.apache.cordova.console.console",
+        "clobbers": [
+            "console"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.console/www/logger.js",
+        "id": "org.apache.cordova.console.logger",
+        "clobbers": [
+            "cordova.logger"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -74,7 +88,8 @@ module.exports.metadata =
     "org.apache.cordova.device": "0.2.10",
     "com.megster.cordova.rfduino": "0.0.2",
     "com.phonegap.plugins.facebookconnect": "0.5.1",
-    "org.apache.cordova.ibeacon": "2.0.0"
+    "org.apache.cordova.ibeacon": "2.0.0",
+    "org.apache.cordova.console": "0.2.9"
 }
 // BOTTOM OF METADATA
 });

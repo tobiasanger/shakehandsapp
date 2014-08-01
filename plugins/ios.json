@@ -43,6 +43,10 @@
                         {
                             "xml": "<feature name=\"LocationManager\"><param name=\"ios-package\" value=\"CDVLocationManager\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
+                            "count": 1
                         }
                     ],
                     "/widget": [
@@ -130,6 +134,9 @@
             "PACKAGE_NAME": "com.phonegap.shakehands"
         },
         "org.apache.cordova.ibeacon": {
+            "PACKAGE_NAME": "com.phonegap.shakehands"
+        },
+        "org.apache.cordova.console": {
             "PACKAGE_NAME": "com.phonegap.shakehands"
         }
     },
