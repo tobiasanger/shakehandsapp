@@ -16,6 +16,7 @@ var app = {
 	rangedme:0,
 	major:0,
 	minor:0,
+	rangedbeacons:[],
 	
 //************************************************		
 		
@@ -55,78 +56,119 @@ var app = {
 	
 	onDeviceReady: function() {
 		
-		
-
-        var delegate = new cordova.plugins.locationManager.Delegate().implement({
+		var delegate = new cordova.plugins.locationManager.Delegate().implement({
 
             didDetermineStateForRegion: function (pluginResult) {
-
-                logToDom('[DOM] didDetermineStateForRegion: ' + JSON.stringify(pluginResult));
 				
+			cordova.plugins.locationManager.appendToDeviceLog('[DOM] didDetermineStateForRegion: '
+                    + JSON.stringify(pluginResult));
+					
 				if (pluginResult.state =="CLRegionStateInside"){
 				//alert("inside");
 				cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
             .fail(console.error)
-            .done();
+            .done(console.log("*********started ranging"));
 				}
-                cordova.plugins.locationManager.appendToDeviceLog('[DOM] didDetermineStateForRegion: '
-                    + JSON.stringify(pluginResult));
+				
+				if (pluginResult.state =="CLRegionStateOutside"){
+				
+				cordova.plugins.locationManager.stopRangingBeaconsInRegion(beaconRegion)
+            .fail(console.error)
+            .done(console.log("*********stoped ranging"));
+				}
+                
             },
 
             didStartMonitoringForRegion: function (pluginResult) {
 				//alert(JSON.stringify(pluginResult));
                 console.log('didStartMonitoringForRegion:', pluginResult);
 
-                logToDom('didStartMonitoringForRegion:' + JSON.stringify(pluginResult));
+                
             },
 
             didRangeBeaconsInRegion: function (pluginResult) {
 				
-                logToDom('[DOM] didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
+                
 				//alert(pluginResult.beacons[0].rssi);
-				console.log("########in ranging")
-				if (pluginResult.beacons[0].minor == app.minor)
-				{
-					console.log("######## got minor")
-					if (app.rangedme == 0){
-						console.log("activate reconnect");
-					setTimeout(function(){ble.reconnect()},6000); // this stuff is not working
-					app.rangedme = 1;
-					}
-				}
-				if(pluginResult.beacons[0].rssi > -65)
-				{
-				/*cordova.plugins.locationManager.stopRangingBeaconsInRegion(beaconRegion)
-            .fail(console.error)
-            .done();*/
-			//alert(pluginResult.beacons[0].major)
-				//idea: start timer or count here, if rssi >-47 for more than 30 sec or so then report meeting to database
-				 // start of from here, not sure if stops after first time
+				console.log("########in ranging");
+				app.rangedBeacons(pluginResult);
 				
-				}
 				
             }
 
         });
 
-        var uuid = 'E2C56DB5-DFFB-48D2-B060-D0F5A71096E0';
+		
+		//beacon.createDelegate();
+		 
+		 var uuid = 'E2C56DB5-DFFB-48D2-B060-D0F5A71096E0';
         var identifier = 'rfduino';
         var minor = 0;
         var major = 0;
+		//beacon.setBeaconRegion(uuid,identifier);
         var beaconRegion = new cordova.plugins.locationManager.BeaconRegion(identifier, uuid);
-
-        cordova.plugins.locationManager.setDelegate(delegate);
-		 
-        cordova.plugins.locationManager.startMonitoringForRegion(beaconRegion)
-            .fail(console.error)
-            .done();
-        /*cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
+		 //cordova.plugins.locationManager.setDelegate(beacon.delegate);
+		cordova.plugins.locationManager.setDelegate(delegate);
+        /*cordova.plugins.locationManager.startMonitoringForRegion(beacon.beaconRegion)
             .fail(console.error)
             .done();*/
-
+			
+			cordova.plugins.locationManager.startMonitoringForRegion(beaconRegion)
+            .fail(console.error)
+            .done();
+			
+	},
+	
+	rangedBeacons: function(pluginResult){
+		console.log("*****in app function for ranging");
 		
-		//app.initFacebook()
-    },
+		for(var i = 0; i < pluginResult.beacons.length; i++){
+				
+				if (pluginResult.beacons[i].minor == app.minor)
+				{
+					console.log("######## got minor");
+					if (app.rangedme == 0){
+						console.log("activate reconnect");
+					setTimeout(function(){ble.reconnect()},8000); 
+					
+					app.rangedme = 1;
+					}
+				}
+				else 
+				{
+					var alreadymet = 0;
+					for (var j = 0; j<app.rangedbeacons.length; j++)
+					{
+						if (app.rangedbeacons[j].minor == pluginResult.beacons[i].minor)
+						{
+							console.log("+++++does exist in list");
+						alreadymet = 1;
+						app.rangedbeacons[j].rssicounts +=1;
+						app.rangedbeacons[j].rssi = (app.rangedbeacons[j].rssi + pluginResult.beacons[i].rssi)/app.rangedbeacons[j].rssicounts;
+						if (app.rangedbeacons[j].rssi > -80)
+						{
+						
+						console.log("+++++++ ready for transfer +++++");
+						console.log("minor: " + app.rangedbeacons[j].minor);
+							
+						}
+						break;
+						 
+						}
+						else 
+						{
+				
+					
+						}
+					}
+					if (!alreadymet) {
+						app.rangedbeacons[app.rangedbeacons.length+1] = new beaconsinrange(pluginResult.beacons[i].uuid, pluginResult.beacons[i].major, pluginResult.beacons[i].minor, pluginResult.beacons[i].rssi)
+						console.log("appended to list");
+					}
+				}
+				}//end for
+		
+	},
 	
 	initFacebook: function() {
 	 	//FB.init({ appId: "735890629767850", nativeInterface: CDV.FB, useCachedDialogs: false });
@@ -142,6 +184,7 @@ var app = {
                     function (response) { 
 					//alert(JSON.stringify(response)) 
 					console.log('Welcome!  Fetching your information.... ');
+					app.checkLoginState();
 					},
                     function (response) { 
 					//alert(JSON.stringify(response)) 
@@ -149,7 +192,7 @@ var app = {
 					});
 					  
  
- app.checkLoginState();
+ 
 	},
 	
 	checkLoginState: function() {	
@@ -649,21 +692,19 @@ if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('C
                                });
 							   */
 							   
+// ###########################  IBEACON ##################################################
 
+function beaconsinrange(uuid, major, minor, rssi) {
+	this.uuid = uuid;
+	this.major = major;
+	this.minor = minor;
+	this.rssicounts =1;
+	this.rssi = rssi;
+	this.met = 0;
+	
  
- var logToDom = function (message) {
-	
-            var e = document.createElement('label');
-            e.innerText = message;
-
-            var br = document.createElement('br');
-            var br2 = document.createElement('br');
-			document.getElementById("ibeaconlog").appendChild(e);
-            document.getElementById("ibeaconlog").appendChild(br);
-            document.getElementById("ibeaconlog").appendChild(br2);
-        };
   
-	
+}
 
 	
 
