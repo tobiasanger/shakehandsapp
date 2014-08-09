@@ -197,7 +197,7 @@ var app = {
 		console.log(data);
         if(data.status== "0") {
 			
-			app.global_user = data.ID;
+			app.global_user = data.ID; //delivered as int, will be converted to string automatically
 			app.major = parseInt(app.global_user.substr(0,4));
 			app.minor = parseInt(app.global_user.substr(4,4));	
 			app.user += data.ID;
@@ -253,9 +253,16 @@ var app = {
 				}
 				var avgrssi = sum/len;
 				
-			alert("++++++ transmit minor" + app.rangedbeacons[i].minor + "avg rssi: " + 
-						avgrssi);
-			console.log("************ transmit it");	
+				//alternatively search mar avgrssi and transmit only this one
+				if(avgrssi > - 80) {
+				var metIdChar = "";
+				metIdChar = app.rangedbeacons[i].major + app.rangedbeacons[i].minor;
+				var metIdInt = parseInt(metIdChar);
+				console.log("************ met ID: " + metIdInt);
+				app.jsmeet(metIdInt);	
+			//alert("++++++ transmit minor" + app.rangedbeacons[i].minor + "avg rssi: " + avgrssi);
+			
+				}
 			}
 			console.log("activate reconnect");
 			//setTimeout(function(){app.rangedbeacons.length = 0},1000);
@@ -273,17 +280,17 @@ var app = {
 				console.log("########in ranging " + pluginResult.beacons.length);	
 				for(var i = 0; i < pluginResult.beacons.length; i++)
 				{
-					if (pluginResult.beacons[i].minor == app.minor)
+					if (pluginResult.beacons[i].minor == app.minor && pluginResult.beacons[i].major == app.major)
 					{
-						console.log("######## got minor");
-						
+						console.log("######## got minor");	
 					} 
 					else 
 					{
 						var index = -1;
 						for (var j = 0; j<app.rangedbeacons.length; j++)
 						{
-							if (app.rangedbeacons[j].minor == pluginResult.beacons[i].minor)
+							if (app.rangedbeacons[j].minor == pluginResult.beacons[i].minor && 
+							app.rangedbeacons[j].major == pluginResult.beacons[i].major)
 							{
 								index = j;
 								break;
@@ -313,8 +320,6 @@ var app = {
 			
 		 var uuid = 'E2C56DB5-DFFB-48D2-B060-D0F5A71096E0';
         var identifier = 'myrfduino';
-        var minor = 0;
-        var major = 0;
         var myBeaconRegion = new cordova.plugins.locationManager.BeaconRegion(identifier, uuid, app.major, app.minor);
 		cordova.plugins.locationManager.setDelegate(mydelegate);
 			
@@ -579,7 +584,7 @@ var data_string = "MYID2="+OTHERS+"&MYID1="+MY+"&TIME="+time;
 		n = d.getTime();
 		$.post("http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/php/meet.php",
   			{
-    		MYID:app.global_user,
+    		MYID:parseInt(app.global_user),
     		METID:id,
 			UTIME:n
   			},
