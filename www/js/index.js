@@ -50,7 +50,7 @@ var app = {
 		refreshButton.addEventListener(touch, ble.refreshDeviceList, false); // for use on phone
 	    deviceList.addEventListener(touch, ble.connect, false); //for use on phone assume not scrolling
 		
-		$(document).on("pagebeforeshow","#connect", ble.refreshDeviceList); // for use on phone
+		if (window.cordova) $(document).on("pagebeforeshow","#connect", ble.refreshDeviceList); // for use on phone
 		$(document).on("pagebeforeshow","#allrequests", this.jsrequest); 
 		$(document).on("pagebeforeshow","#profile", this.jsprofile); 
 		},
@@ -141,27 +141,29 @@ var app = {
 	},
 	
 	checkLoginState: function() {	
-	facebookConnectPlugin.getLoginStatus( 
+		facebookConnectPlugin.getLoginStatus(function (response) 
+		{ 
+					if (response.status === 'connected') 
+					{
+					  // Logged into your app and Facebook.
+					  //alert("in connected");
+					  app.FBregister();
+					  //inputFB();
+					} else if (response.status === 'not_authorized') 
+					{
+						alert("in not authorized");
+						//FBregister();
+					  // The person is logged into Facebook, but not your app.
+					  
+					} else {
+						alert("in not loged in");
+					  // The person is not logged into Facebook, so we're not sure if
+					  // they are logged into this app or not.
+					  
+					}
+		},
                     function (response) { 
-					if (response.status === 'connected') {
-      // Logged into your app and Facebook.
-	  //alert("in connected");
-	  app.FBregister();
-      //inputFB();
-    } else if (response.status === 'not_authorized') {
-		alert("in not authorized");
-		//FBregister();
-      // The person is logged into Facebook, but not your app.
-      
-    } else {
-		alert("in not loged in");
-      // The person is not logged into Facebook, so we're not sure if
-      // they are logged into this app or not.
-      
-    }
-					},
-                    function (response) { 
-					alert(JSON.stringify(response)) 
+					//alert(JSON.stringify(response)) 
 					}
 					);
 	 
@@ -185,7 +187,7 @@ var app = {
 	  fbfname = response.first_name;
 	  fblname = response.last_name;
 	   //alert(app.fbid + " " + fbfname);  
-	 
+	
     
 	  $.ajax({
       url: 'http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/php/fbregister.php',
@@ -206,7 +208,7 @@ var app = {
 			console.log(app.major);	
 			console.log(app.minor);	
 		
-		
+		if (window.cordova) {
 		 var mydelegate = new cordova.plugins.locationManager.Delegate().implement({
 
             didStartMonitoringForRegion: function (pluginResult) {
@@ -326,7 +328,7 @@ var app = {
 			cordova.plugins.locationManager.startMonitoringForRegion(myBeaconRegion)
             .fail(console.error)
             .done();
-			
+		}//end if cordova.window
 					
 			$.mobile.changePage("#connect", {transition: "slidefade"});
         }
@@ -412,12 +414,15 @@ var app = {
    //alert ("inside jsrequests");
 
 
-var temp_allrequests = "{{#requests}}<tr><td><a href=\"#\" onclick=\"app.viewrequest('{{request.OTHERS}}',\'{{request.MY}}\',\'{{request.time}}\')\">{{request.OTHERS}}</a></td><td>{{request.NAME}}</td><td>{{request.EMAIL}}</td><td>{{request.time}}</td></tr>{{/requests}}";      
+/*var temp_allrequests = "{{#requests}}<tr><td><a href=\"#\" onclick=\"app.viewrequest('{{request.OTHERS}}',\'{{request.MY}}\',\'{{request.time}}\')\">{{request.OTHERS}}</a></td><td>{{request.NAME}}</td><td>{{request.EMAIL}}</td><td>{{request.time}}</td></tr>{{/requests}}"; */ 
+
+var temp_allrequests = "{{#requests}}<tr><td><a href=\"#\" onclick=\"app.viewuser('{{request.OTHERS}}')\">{{request.NAME}}</a></td><td>{{request.time}}</td><td><button onclick=\"app.confirmrequest()\" data-icon=\"plus\">Confirm</button></td><td><button onclick=\"app.ignorerequest()\" data-icon=\"plus\">Ignore</button></td></tr>{{/requests}}";      
+//id:    {{request.OTHERS}}
 
 $.ajax({
 		type: "POST",
-		url: "http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/php/request.php",		
-		data: {user:app.global_user}, //TODO need to unify later to one user variable
+		url: "http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/php/newrequest.php",		
+		data: {user:app.global_user}, //TODO convert to int
 		dataType: "json",
 		success: function(data){
 			console.log(data);			
@@ -435,9 +440,89 @@ $.ajax({
 	
 },
 
+viewuser: function(ID) {
+	 $.ajax({
+      url: 'http://websys1.stern.nyu.edu/websysS14/websysS143/public_html/websys/php/newprofile.php',
+      type: 'post',
+      data: {user:ID},
+      success: function(data) {
+		console.log(data);
+        if(data.status== "1") {
+			facebookConnectPlugin.api('/10152080797888199/picture?height=200&width=200&redirect=false',["basic_info"], 
+    function (response) {
+      if (response && !response.error) {
+        /* handle the result */
+		console.log(JSON.stringify(response));
+		document.getElementById("userimg").src = response.data.url;
+		
+      }
+    }, 
+	function (response) {
+		console.log(JSON.stringify(response));
+	}
+);
+
+facebookConnectPlugin.api('/10152080797888199',["basic_info"], function(response) {    
+	  console.log(JSON.stringify(response));	 
+	   //alert(app.fbid + " " + fbfname);  
+	 document.getElementById("username").innerHTML = response.name;
+	 document.getElementById("FBlink").href = response.link;
+},
+function (response) {
+		console.log(JSON.stringify(response));
+	});	
+			$("#requestor").trigger("create");
+
+			$.mobile.changePage("#requestor", {transition: "slidefade"});
+				
+        }
+		else
+		alert("There was an error communicating with the database");
+      },
+      error: function(data) {
+       alert("There was an error communicating with the database");
+      }
+    }); // end ajax call
+	 
+	 
+ },
+
+confirmrequest: function() {
+	alert("confirm");
+	
+},
+
+ignorerequest: function() {
+	alert("ignore");
+	
+},
+
 jsprofile: function() {
 		//alert("inside jsprofile");
+facebookConnectPlugin.api('/me/picture?height=200&width=200&redirect=false',["basic_info"],   
+    function (response) {      
+        /* handle the result */
+		console.log(JSON.stringify(response));
+		document.getElementById("profileimg").src = response.data.url;      
+    },	
+	function (response) {
+		console.log(JSON.stringify(response));
+	}
+);
+
+facebookConnectPlugin.api('/me',["basic_info"], function(response) {
 		
+    
+	  console.log(JSON.stringify(response));
+	 
+	   //alert(app.fbid + " " + fbfname);  
+	 document.getElementById("profilename").innerHTML = response.name;
+}, 
+	function (response) {
+		console.log(JSON.stringify(response));
+	});
+
+/*		
 var temp_profile="<p><img src=\"{{PHOTO}}\" width=25% style=\"float:left\" alt=\"Profile Photo\"/></p><h1 id=\"my_fullname\">{{FNAME}} {{LNAME}} </h1><p id=\"my_bio\">User bio goes here.</p><br><br/><p id=\"my_email\"><a href=\"#\">{{EMAIL}}</a></p><p id=\"my_phone\">{{PHONE}} </p><div data-role=\"controlgroup\" data-type=\"horizontal\"><button id=\"my_facebook\">Facebook</button><button id=\"my_linkedin\">LinkedIn</button><button id=\"my_twitter\">Twitter</button><button id=\"my_instagram\">Instagram</button></div>";	
 		
  $.ajax({
@@ -461,8 +546,10 @@ var temp_profile="<p><img src=\"{{PHOTO}}\" width=25% style=\"float:left\" alt=\
       error: function(data) {
        alert("There was an error communicating with the database");
       }
-    });	
+    });	*/
  },
+ 
+ 
  
  viewrequest: function(OTHERS,MY,time) {
 	 
@@ -478,7 +565,7 @@ console.log(data_time);
 
 
 var temp_user="<img src=\"{{PHOTO}}\" width=25% style=\"float:left\" alt=\"Profile Photo\"/><h1 id=\"contact_fullname\">{{FNAME}} {{LNAME}}</h1><h1 id=\"contact_bio\">Bio: {{Bio}}</h1></br></br><div data-role=\"fieldcontain\"><label for=\"flipswitch\">Name this location:</label><select name=\"flipswitch\" id=\"flipswitch\" data-role=\"slider\"><option value=\"off\">Off</option><option value=\"on\">On</option></select></div><div data-role=\"controlgroup\" data-type=\"horizontal\"><div data-role=\"controlgroup\"></div>What do you want to share with this person?<div data-role=\"fieldcontain\"><fieldset data-role=\"controlgroup\"><input type=\"checkbox\" name=\"checkbox1\" id=\"checkbox1_0\" class=\"custom\" value=\"\" /><label for=\"checkbox1_0\">E-mail</label><input type=\"checkbox\" name=\"checkbox1\" id=\"checkbox1_1\" class=\"custom\" value=\"\" /><label for=\"checkbox1_1\">Phone#</label><input type=\"checkbox\" name=\"checkbox1\" id=\"checkbox1_2\" class=\"custom\" value=\"\" /><label for=\"checkbox1_2\">Facebook</label><input type=\"checkbox\" name=\"checkbox1\" id=\"checkbox1_3\" class=\"custom\" value=\"\" /><label for=\"checkbox1_3\">LinkedIn</label><input type=\"checkbox\" name=\"checkbox1\" id=\"checkbox1_4\" class=\"custom\" value=\"\" /><label for=\"checkbox1_4\">Twitter</label><input type=\"checkbox\" name=\"checkbox1\" id=\"checkbox1_5\" class=\"custom\" value=\"\" /><label for=\"checkbox1_5\">Instagram</label></fieldset></div><br/><a href=\"#\" data-role=\"button\" data-icon=\"delete\" onclick=\"app.jsignore('"+OTHERS+"','"+MY+"','"+time+"')\">Ignore</a><a href=\"#\" input type=\"submit\" data-icon=\"plus\" onclick=\"app.jsconfirm('"+OTHERS+"','"+MY+"','"+time+"')\">Confirm Contact</a></div>";
-  
+ 
 
 $.ajax({
 		type: "POST",

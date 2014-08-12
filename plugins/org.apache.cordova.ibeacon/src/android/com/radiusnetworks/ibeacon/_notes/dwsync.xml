@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="BleNotAvailableException.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130520904187395681" remote="130523352530000000" Dst="2" />
+<file name="IBeacon.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130520904187665696" remote="130523352530000000" Dst="2" />
+<file name="IBeaconConsumer.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130520904187965713" remote="130523352530000000" Dst="2" />
+<file name="IBeaconData.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130520904188245729" remote="130523352530000000" Dst="2" />
+<file name="IBeaconDataNotifier.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130520904188515745" remote="130523352530000000" Dst="2" />
+<file name="IBeaconIntentProcessor.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130520904188765759" remote="130523352540000000" Dst="2" />
+<file name="IBeaconManager.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130520904189075777" remote="130523352540000000" Dst="2" />
+<file name="MonitorNotifier.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130520904189345792" remote="130523352540000000" Dst="2" />
+<file name="RangeNotifier.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130520904189625808" remote="130523352540000000" Dst="2" />
+<file name="Region.java" server="websys1.stern.nyu.edu/public_html/websys/" local="130520904189905824" remote="130523352540000000" Dst="2" />
+</dwsync>

@@ -7,4 +7,6 @@
 <file name="meet.php" server="websys1.stern.nyu.edu/public_html/websys/" local="130443222351865207" remote="130493204450000000" Dst="2" />
 <file name="profile.php" server="websys1.stern.nyu.edu/public_html/websys/" local="130441328090000000" remote="130493204450000000" Dst="2" />
 <file name="request.php" server="websys1.stern.nyu.edu/public_html/websys/" local="130442240300000000" remote="130493204450000000" Dst="2" />
+<file name="newrequest.php" server="websys1.stern.nyu.edu/public_html/websys/" local="130523403763661733" remote="130523407060000000" Dst="2" />
+<file name="newprofile.php" server="websys1.stern.nyu.edu/public_html/websys/" local="130523448456550575" remote="130523456550000000" Dst="2" />
 </dwsync>
