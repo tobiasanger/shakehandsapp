@@ -53,6 +53,7 @@
 		9FFE6107D98B4C69B062982F /* AppDelegate+CDVLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BFECCA6D0A4A7F98C68B7F /* AppDelegate+CDVLocationManager.m */; };
 		A54F6C8EA9B54A3FA8AE87B4 /* LMLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F287C1A2BBA446A8C940437 /* LMLogger.m */; };
 		60783B6678F6469886826A4C /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9FFAF3A4BA45B2B78348F1 /* CDVLogger.m */; };
+		AAD20854720E438FA0005FB8 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C993359AB11944C5BEA97EEC /* CDVInAppBrowser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,8 @@
 		322C6132EB924A48BBD1B856 /* LMLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LMLogger.h"; path = "org.apache.cordova.ibeacon/LMLogger.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		9C9FFAF3A4BA45B2B78348F1 /* CDVLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVLogger.m"; path = "org.apache.cordova.console/CDVLogger.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		F1701237DC9A4F98BF0A003E /* CDVLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVLogger.h"; path = "org.apache.cordova.console/CDVLogger.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		C993359AB11944C5BEA97EEC /* CDVInAppBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVInAppBrowser.m"; path = "org.apache.cordova.inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		21D4C9170428420994FCD41A /* CDVInAppBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVInAppBrowser.h"; path = "org.apache.cordova.inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +293,8 @@
 				322C6132EB924A48BBD1B856 /* LMLogger.h */,
 				9C9FFAF3A4BA45B2B78348F1 /* CDVLogger.m */,
 				F1701237DC9A4F98BF0A003E /* CDVLogger.h */,
+				C993359AB11944C5BEA97EEC /* CDVInAppBrowser.m */,
+				21D4C9170428420994FCD41A /* CDVInAppBrowser.h */,
 			);
 			name = Plugins;
 			path = "Shakehands/Plugins";
@@ -492,6 +497,7 @@
 				9FFE6107D98B4C69B062982F /* AppDelegate+CDVLocationManager.m in Sources */,
 				A54F6C8EA9B54A3FA8AE87B4 /* LMLogger.m in Sources */,
 				60783B6678F6469886826A4C /* CDVLogger.m in Sources */,
+				AAD20854720E438FA0005FB8 /* CDVInAppBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

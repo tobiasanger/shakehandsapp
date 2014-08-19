@@ -448,12 +448,26 @@ viewuser: function(ID) {
       success: function(data) {
 		console.log(data);
         if(data.status== "1") {
-			facebookConnectPlugin.api('/10152080797888199/picture?height=200&width=200&redirect=false',["basic_info"], 
+
+facebookConnectPlugin.api('/10152080797888199/picture?height=200&width=200&redirect=false',["basic_info"], 
     function (response) {
       if (response && !response.error) {
         /* handle the result */
 		console.log(JSON.stringify(response));
 		document.getElementById("userimg").src = response.data.url;
+		
+		facebookConnectPlugin.api('/10152080797888199',["basic_info"], function(response) {    
+	  console.log(JSON.stringify(response));	 
+	   //alert(app.fbid + " " + fbfname);  
+	 document.getElementById("username").innerHTML = response.name;
+	 //document.getElementById("FBlink").href = response.link;
+	 document.getElementById("FBlink").onclick = function () { var ref = window.open(response.link, '_system');};
+	 $("#requestor").trigger("create");
+	 $.mobile.changePage("#requestor", {transition: "slidefade"});
+},
+function (response) {
+		console.log(JSON.stringify(response));
+	});	
 		
       }
     }, 
@@ -461,19 +475,7 @@ viewuser: function(ID) {
 		console.log(JSON.stringify(response));
 	}
 );
-
-facebookConnectPlugin.api('/10152080797888199',["basic_info"], function(response) {    
-	  console.log(JSON.stringify(response));	 
-	   //alert(app.fbid + " " + fbfname);  
-	 document.getElementById("username").innerHTML = response.name;
-	 document.getElementById("FBlink").href = response.link;
-},
-function (response) {
-		console.log(JSON.stringify(response));
-	});	
-			$("#requestor").trigger("create");
-
-			$.mobile.changePage("#requestor", {transition: "slidefade"});
+		
 				
         }
 		else
@@ -503,24 +505,26 @@ facebookConnectPlugin.api('/me/picture?height=200&width=200&redirect=false',["ba
     function (response) {      
         /* handle the result */
 		console.log(JSON.stringify(response));
-		document.getElementById("profileimg").src = response.data.url;      
-    },	
-	function (response) {
-		console.log(JSON.stringify(response));
-	}
-);
-
-facebookConnectPlugin.api('/me',["basic_info"], function(response) {
+		document.getElementById("profileimg").src = response.data.url;
+		facebookConnectPlugin.api('/me',["basic_info"], function(response) {
 		
     
 	  console.log(JSON.stringify(response));
 	 
 	   //alert(app.fbid + " " + fbfname);  
 	 document.getElementById("profilename").innerHTML = response.name;
+	 $("#profile").trigger("create"); 
 }, 
 	function (response) {
 		console.log(JSON.stringify(response));
 	});
+		     
+    },	
+	function (response) {
+		console.log(response);
+	});
+
+	
 
 /*		
 var temp_profile="<p><img src=\"{{PHOTO}}\" width=25% style=\"float:left\" alt=\"Profile Photo\"/></p><h1 id=\"my_fullname\">{{FNAME}} {{LNAME}} </h1><p id=\"my_bio\">User bio goes here.</p><br><br/><p id=\"my_email\"><a href=\"#\">{{EMAIL}}</a></p><p id=\"my_phone\">{{PHONE}} </p><div data-role=\"controlgroup\" data-type=\"horizontal\"><button id=\"my_facebook\">Facebook</button><button id=\"my_linkedin\">LinkedIn</button><button id=\"my_twitter\">Twitter</button><button id=\"my_instagram\">Instagram</button></div>";	

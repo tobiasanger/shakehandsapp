@@ -38,6 +38,9 @@
     <feature name="Console">
         <param name="ios-package" value="CDVLogger" />
     </feature>
+    <feature name="InAppBrowser">
+        <param name="ios-package" value="CDVInAppBrowser" />
+    </feature>
     <feature name="RFduino">
         <param name="ios-package" onload="true" value="MEGRFduino" />
     </feature>

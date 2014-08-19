@@ -15,7 +15,7 @@ if (!window.cordova) {
             // Try will catch errors when SDK has not been init
             try {
                 FB.getLoginStatus(function (response) {
-                    alert(JSON.stringify(response)); 
+                    //alert(JSON.stringify(response)); 
 					s(response);
 					
                 });
