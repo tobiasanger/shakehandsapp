@@ -883,6 +883,12 @@
           <string>fb735890629767850</string>
         </array>
       </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb735890629767850</string>
+        </array>
+      </dict>
     </array>
   </dict>
 </plist>
